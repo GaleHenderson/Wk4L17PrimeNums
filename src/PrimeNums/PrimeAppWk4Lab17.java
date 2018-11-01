@@ -14,8 +14,11 @@ public class PrimeAppWk4Lab17 {
 		int status = 1;
 		int num = 2;
 		ArrayList<Integer> primeNums = new ArrayList<>();
+		String userCont = "y";
 
-userChoice = Validator.getInt(scan, "Which sequenced prime number would you like to locate?");
+		System.out.println("Whelcome to the Prime Finder! Let's find one of the first 100 prime numbers.");
+		while(userCont.equalsIgnoreCase("y")) {
+userChoice = Validator.getInt(scan, "Which sequenced prime number would you like to locate?", 1,100);
 
 			
 			for (int i = 1; i <= 100;) {
@@ -26,37 +29,19 @@ userChoice = Validator.getInt(scan, "Which sequenced prime number would you like
 					}
 				}
 				if (status != 0) {
-					System.out.println(num);
+
 					i++;
 					primeNums.add(num);
 				}
 				status = 1;
 				num++;
-			
 			}
-			System.out.println(primeNums);
-
+			System.out.println("The number " + userChoice + " prime number is " + primeNums.get(userChoice-1) + ".");
+			userCont = Validator.getString(scan, "Would you like to continue finding the first 100 prime numbers?");
 		}
+		System.out.println("Goodbye!");
+		}
+	
 
-//	public static boolean isPrime(int n) {
-//		if (n % 2 == 0)
-//			return false;
-//		for (int i = 3; i * i <= n; i += 2) {
-//			if (n % i == 0)
-//				return false;
-//		}
-//		return true;
-//	}
-
-//	public static int sequencer(int num) {
-//		int sequenceNum = 0;
-//		int counter = 1;
-//		if (isPrime(num)== true)
-//		for (int i = 2; i >= 2; i++) {
-//			System.out.println("The number" + counter++ + "prime number is " + );
-//		}
-//		
-//		return sequenceNum;
-//	}
 
 }
